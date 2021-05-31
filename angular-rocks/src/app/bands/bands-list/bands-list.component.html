@@ -1,0 +1,10 @@
+<div class="container-fluid list">
+    <div class="row">
+        <div *ngFor="let band of bands" class="col-5 card m-5">
+            <img class="card-img-top" src="../../../assets/images/{{band.image}}.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{band.name}}</h5>
+            </div>
+        </div>
+    </div>
+</div>

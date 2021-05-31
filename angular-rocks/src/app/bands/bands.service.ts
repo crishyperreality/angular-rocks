@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Bands } from '../model/band';
+import { Band, Bands } from '../model/band';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,12 @@ export class BandsService {
     return this.http.get<Bands>(
       'http://localhost:3000/'
     )
+  };
 
+  viewBand(band_id:number): Observable<Band>{
+    return this.http.get<Band>(
+      `http://localhost:3000/${band_id}`
+    )
   }
 
 

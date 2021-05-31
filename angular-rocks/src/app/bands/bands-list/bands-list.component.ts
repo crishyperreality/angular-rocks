@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Bands } from 'src/app/model/band';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Band, Bands } from 'src/app/model/band';
 
 @Component({
   selector: 'app-bands-list',
@@ -9,9 +9,15 @@ import { Bands } from 'src/app/model/band';
 export class BandsListComponent implements OnInit {
 
   @Input() bands: Bands; 
+  @Output() selectedBand = new EventEmitter<Band>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectBand(band: Band): void {
+    this.selectedBand.emit(band)
   }
 
 }

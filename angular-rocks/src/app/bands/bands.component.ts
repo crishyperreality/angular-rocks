@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Bands } from '../model/band';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { Band, Bands } from '../model/band';
 import { BandsService } from './bands.service';
 
 @Component({
@@ -10,11 +10,22 @@ import { BandsService } from './bands.service';
 export class BandsComponent implements OnInit {
 
   @Input() bands: Bands;
+  band: Band;
+  clickedOnBand: boolean = false;
 
   constructor(private bandsService: BandsService) { }
 
   ngOnInit(): void {
     this.viewBandsList();
+  }
+
+  chooseBand(value): void {
+    this.band = value;
+    this.clickedOnBand = true;
+  }
+
+  hideDetail(value: boolean): void {
+    this.clickedOnBand = value;
   }
 
   private viewBandsList(): void {
@@ -23,5 +34,7 @@ export class BandsComponent implements OnInit {
       this.bands = bandsList;
     })
   }
+
+
 
 }

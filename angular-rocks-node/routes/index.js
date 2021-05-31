@@ -1,8 +1,8 @@
 const express = require('express');
 const route = express.Router();
-const indexController = require('../controllers/indexController');
+const controller = require('../controllers/indexController');
 
 //localhost:3000
-route.get('/', indexController.viewList);
+route.get('/', controller.viewList);
 
 module.exports = route;

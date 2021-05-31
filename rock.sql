@@ -81,3 +81,5 @@ Kiss ha conseguido treinta discos de oro de la RIAA hacia 2015 y se la considera
 Desde su formación, los miembros de Kiss asumieron personalidades acordes con los maquillajes y vestimenta que llevaban, así Simmons asumió el rol de «Demon», 
 Stanley el de «Starchild», Criss el de «Catman» y Frehley el de «Space Ace» o «Spaceman».',
 'kiss', 'https://www.youtube.com/watch?v=ZhIsAZO5gl0');
+
+SELECT * FROM band WHERE band_id = 4;

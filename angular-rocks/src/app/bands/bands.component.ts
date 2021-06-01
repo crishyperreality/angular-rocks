@@ -30,7 +30,12 @@ export class BandsComponent implements OnInit {
   }
 
   viewForm(e): void {
+    console.log(e);
     this.editting = e;
+  }
+
+  random(e): void {
+    console.log('cosis')
   }
 
   private viewBandsList(): void {

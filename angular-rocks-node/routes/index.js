@@ -10,4 +10,7 @@ route.get('/:band_id', controller.viewBand)
 route.post('/delete', controller.deleteBand)
 //localhost:3000/addBand
 route.post('/addBand', controller.addBand)
+//localhost:3000/editBand
+route.put('/editBand', controller.editBand)
+
 module.exports = route;

@@ -1,3 +1,3 @@
 <app-bands-list *ngIf="clickedOnBand === false && editting === false"[bands]="bands" (selectedBand)="chooseBand($event)" (editting)="viewForm($event)"></app-bands-list>
-<app-band-detailed *ngIf="clickedOnBand && editting === false"[bandDetailed]="band" [remainingBands]="bands" (goToMainPage)="hideDetail($event)"></app-band-detailed>
-<app-band-form *ngIf="editting" (edittingForm)="viewForm($event)"></app-band-form>
+<app-band-detailed *ngIf="clickedOnBand && editting === false"[bandDetailed]="band" [remainingBands]="bands" (goToMainPage)="hideDetail($event)" (editting)="viewForm($event)"></app-band-detailed>
+<app-band-form *ngIf="editting" [bandToEdit]="band" (edittingForm)="viewForm($event)"></app-band-form>

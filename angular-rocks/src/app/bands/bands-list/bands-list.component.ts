@@ -10,6 +10,7 @@ export class BandsListComponent implements OnInit {
 
   @Input() bands: Bands; 
   @Output() selectedBand = new EventEmitter<Band>();
+  @Output() editting = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -18,6 +19,10 @@ export class BandsListComponent implements OnInit {
 
   selectBand(band: Band): void {
     this.selectedBand.emit(band)
+  }
+
+  showForm(): void {
+    this.editting.emit(true)
   }
 
 }

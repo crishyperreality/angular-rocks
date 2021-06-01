@@ -8,5 +8,6 @@ route.get('/', controller.viewList);
 route.get('/:band_id', controller.viewBand)
 //localhost:3000/delete/:band_id
 route.post('/delete', controller.deleteBand)
-
+//localhost:3000/addBand
+route.post('/addBand', controller.addBand)
 module.exports = route;

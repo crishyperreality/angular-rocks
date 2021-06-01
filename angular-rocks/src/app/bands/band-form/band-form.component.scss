@@ -1,0 +1,12 @@
+.container {
+    background-color: pink;
+    height: 100px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        width: 150px;
+    }
+}

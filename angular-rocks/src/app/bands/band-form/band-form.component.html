@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="bandForm" (ngSubmit)="saveBand()">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nombre de la banda</label>
+                    <input type="text" id="name" formControlName="name" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Información sobre la banda</label>
+                    <textarea id="info" rows="15" formControlName="info"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Vídeo</label>
+                    <input type="url" class="form-control" id="video" formControlName="video" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Imagen</label>
+                    <input type="file" class="form-control-file" formControlName="image" id="image">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -28,5 +28,11 @@ export class BandsService {
       )
   };
 
+  addBand(band: Band):Observable<Band>{
+    return this.http.post<Band>(
+      'http://localhost:3000/addBand', band
+    )
+  }
+
 
 }

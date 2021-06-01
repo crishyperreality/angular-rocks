@@ -12,6 +12,7 @@ export class BandsComponent implements OnInit {
   @Input() bands: Bands;
   band: Band;
   clickedOnBand: boolean = false;
+  editting: boolean = false;
 
   constructor(private bandsService: BandsService) { }
 
@@ -26,6 +27,10 @@ export class BandsComponent implements OnInit {
 
   hideDetail(value: boolean): void {
     this.clickedOnBand = value;
+  }
+
+  viewForm(e): void {
+    this.editting = e;
   }
 
   private viewBandsList(): void {

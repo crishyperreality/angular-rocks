@@ -7,18 +7,23 @@ import { BandsComponent } from './bands/bands.component';
 import { BandsListComponent } from './bands/bands-list/bands-list.component';
 import { BandDetailedComponent } from './bands/band-detailed/band-detailed.component';
 import { BandsService } from './bands/bands.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BandFormComponent } from './bands/band-form/band-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BandsComponent,
     BandsListComponent,
-    BandDetailedComponent
+    BandDetailedComponent,
+    BandFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [BandsService],
   bootstrap: [AppComponent]

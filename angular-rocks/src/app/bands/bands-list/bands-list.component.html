@@ -1,5 +1,10 @@
 <div class="container-fluid list">
     <div class="row">
+        <div class="col-12">
+            <button (click)="showForm()">Añadir banda</button>
+        </div>
+    </div>
+    <div class="row">
         <div *ngFor="let band of bands" class="col-5 card m-5" (click)="selectBand(band)">
             <img class="card-img-top" src="../../../assets/images/{{band.image}}.jpg" alt="Card image cap">
             <div class="card-body">

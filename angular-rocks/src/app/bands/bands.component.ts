@@ -13,6 +13,7 @@ export class BandsComponent implements OnInit {
   band: Band;
   clickedOnBand: boolean = false;
   editting: boolean = false;
+  filterValue: string;
 
   constructor(private bandsService: BandsService) { }
 
@@ -34,8 +35,8 @@ export class BandsComponent implements OnInit {
     this.editting = e;
   }
 
-  random(e): void {
-    console.log('cosis')
+  handleSearch(value): void {
+    this.filterValue = value;
   }
 
   private viewBandsList(): void {

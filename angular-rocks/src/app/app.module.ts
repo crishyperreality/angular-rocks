@@ -9,6 +9,7 @@ import { BandDetailedComponent } from './bands/band-detailed/band-detailed.compo
 import { BandsService } from './bands/bands.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BandFormComponent } from './bands/band-form/band-form.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BandFormComponent } from './bands/band-form/band-form.component';
     BandsComponent,
     BandsListComponent,
     BandDetailedComponent,
-    BandFormComponent
+    BandFormComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

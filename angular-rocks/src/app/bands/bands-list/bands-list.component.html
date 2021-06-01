@@ -5,7 +5,15 @@
         </div>
     </div>
     <div class="row">
-        <div *ngFor="let band of bands" class="col-5 card m-5" (click)="selectBand(band)">
+        <div class="col-12">
+            <form >
+                <label for="">Búsqueda</label>
+                <input [formControl]="search" type="text" placeholder="Nombre de la banda">
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let band of bands | search:filterValue" class="col-5 card m-5" (click)="selectBand(band)">
             <img class="card-img-top" src="../../../assets/images/{{band.image}}.jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{band.name}}</h5>

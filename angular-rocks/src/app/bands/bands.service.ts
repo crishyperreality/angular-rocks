@@ -16,11 +16,17 @@ export class BandsService {
     )
   };
 
-  viewBand(band_id:number): Observable<Band>{
+  viewBand(id:number): Observable<Band>{
     return this.http.get<Band>(
-      `http://localhost:3000/${band_id}`
+      `http://localhost:3000/${id}`
     )
-  }
+  };
+  
+  deleteBand(band: Band){
+      return this.http.post(
+        `http://localhost:3000/delete`, band
+      )
+  };
 
 
 }

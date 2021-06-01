@@ -1,2 +1,2 @@
 <app-bands-list *ngIf="clickedOnBand === false"[bands]="bands" (selectedBand)="chooseBand($event)"></app-bands-list>
-<app-band-detailed *ngIf="clickedOnBand"[bandDetailed]="band" (goToMainPage)="hideDetail($event)"></app-band-detailed>
+<app-band-detailed *ngIf="clickedOnBand"[bandDetailed]="band" [remainingBands]="bands" (goToMainPage)="hideDetail($event)"></app-band-detailed>

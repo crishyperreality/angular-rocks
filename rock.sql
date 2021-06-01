@@ -1,4 +1,3 @@
-CREATE DATABASE rock;
 
 USE rock;
 
@@ -7,7 +6,8 @@ CREATE TABLE band (
     name VARCHAR(45) NOT NULL,
     info TEXT,
     image VARCHAR(100),
-    video VARCHAR(250)
+    video VARCHAR(250),
+    visible BOOLEAN NOT NULL DEFAULT true
 );
 
 SELECT * FROM band;
@@ -83,3 +83,5 @@ Stanley el de «Starchild», Criss el de «Catman» y Frehley el de «Space Ace�
 'kiss', 'https://www.youtube.com/watch?v=ZhIsAZO5gl0');
 
 SELECT * FROM band WHERE band_id = 4;
+
+UPDATE band SET visible = 1 WHERE band_id;

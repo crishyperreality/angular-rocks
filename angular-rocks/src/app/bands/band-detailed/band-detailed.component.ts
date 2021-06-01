@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Band, Bands } from 'src/app/model/band';
 import { BandsService } from '../bands.service';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-band-detailed',
@@ -13,10 +14,12 @@ export class BandDetailedComponent implements OnInit {
   remainingBands: Bands;
   @Output() goToMainPage = new EventEmitter<boolean>();
   @Output() editting = new EventEmitter<boolean>();
+  safeUrl: SafeUrl;
 
-  constructor(private bandsService: BandsService) { }
+  constructor(private bandsService: BandsService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    console.log(this.bandDetailed)
   }
 
   return(): void {

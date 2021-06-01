@@ -10,6 +10,8 @@ import { BandsService } from './bands/bands.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BandFormComponent } from './bands/band-form/band-form.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { SafePipeModule } from 'safe-pipe';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,16 @@ import { SearchPipe } from './pipes/search.pipe';
     BandsListComponent,
     BandDetailedComponent,
     BandFormComponent,
-    SearchPipe
+    SearchPipe,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SafePipeModule
   ],
   providers: [BandsService],
   bootstrap: [AppComponent]

@@ -3,6 +3,10 @@
         <div class="col-12 p-5 display">
             <h3>{{bandDetailed.name}}</h3>
             <p>{{bandDetailed.info}}</p>
+
+            <iframe [src]="bandDetailed.video | safe" width="800" height="400">
+            </iframe>
+
             <button (click)="return()">Volver</button>
             <button (click)="editBand()">Editar</button>
             <button (click)="deleteBand(bandDetailed)">Eliminar</button>

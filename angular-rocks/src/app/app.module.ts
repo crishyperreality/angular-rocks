@@ -12,6 +12,7 @@ import { BandFormComponent } from './bands/band-form/band-form.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { SafePipeModule } from 'safe-pipe';
 import { SafePipe } from './pipes/safe.pipe';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SafePipe } from './pipes/safe.pipe';
     BandDetailedComponent,
     BandFormComponent,
     SearchPipe,
-    SafePipe
+    SafePipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

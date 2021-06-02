@@ -1,20 +1,20 @@
-<div class="container-fluid list">
+<div class="container-fluid bg">
     <div class="row">
-        <div class="col-12">
-            <button (click)="showForm()">Añadir banda</button>
+        <div class="col-12 add-button">
+            <button class="btn" (click)="showForm()">Añadir banda</button>
         </div>
     </div>
     <div class="row">
+
         <div class="col-12">
-            <form >
-                <label for="">Búsqueda</label>
-                <input [formControl]="search" type="text" placeholder="Nombre de la banda">
+            <form>
+                <input class="search-bar" [formControl]="search" type="text" placeholder="Nombre de la banda">
             </form>
         </div>
     </div>
-    <div class="row">
+    <div class="row list">
         <div *ngFor="let band of bands | search:filterValue" class="col-5 card m-5" (click)="selectBand(band)">
-            <img class="card-img-top" src="{{band.image}}" alt="Card image cap">
+            <img class="card-img-top" src="{{band.image}}" alt="{{band.name}}">
             <div class="card-body">
                 <h5 class="card-title">{{band.name}}</h5>
             </div>

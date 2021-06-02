@@ -1,3 +1,4 @@
+import { ReadVarExpr } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Band } from 'src/app/model/band';
@@ -11,6 +12,7 @@ import { BandsService } from '../bands.service';
 export class BandFormComponent implements OnInit {
 
   bandForm: FormGroup;
+  selectedImage: File;
   @Input() bandToEdit: Band;
   @Output() edittingForm = new EventEmitter<boolean>();
 
@@ -25,6 +27,8 @@ export class BandFormComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.bandToEdit);
+    console.log(this.bandForm.controls);
+
   }
 
   saveBand(): void {
@@ -46,7 +50,7 @@ export class BandFormComponent implements OnInit {
           })
         }
       }
-    } 
+    }  
   
   private verifyInputs(): void {
     if(this.bandForm.value.name === ''){
@@ -58,9 +62,9 @@ export class BandFormComponent implements OnInit {
     if(this.bandForm.value.video === ''){
       this.bandForm.controls['video'].setValue(this.bandToEdit.video);
     }
-    // if(this.bandForm.value.image === ''){
-    //   this.bandForm.controls['image'].setValue(this.bandToEdit.image);
-    // }
+    if(this.bandForm.value.image === ''){
+      this.bandForm.controls['image'].setValue(this.bandToEdit.image);
+    }
   }
 
 }

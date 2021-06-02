@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <form [formGroup]="bandForm" (ngSubmit)="saveBand()">
+            <form enctype="multipart/form-data" [formGroup]="bandForm" (ngSubmit)="saveBand()">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre de la banda</label>
                     <input type="text" id="name" formControlName="name" placeholder="{{bandToEdit?.name}}">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Imagen</label>
-                    <input type="file" class="form-control-file" formControlName="image" id="image">
+                    <input type="url" class="form-control" id="image" formControlName="image" placeholder="{{bandToEdit?.image}}">
                 </div>
                 <div class="form-group">
                     <button type="submit">Guardar</button>

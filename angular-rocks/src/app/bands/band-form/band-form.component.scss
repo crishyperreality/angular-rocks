@@ -1,9 +1,9 @@
 .form {
     background-color:rgb(37, 37, 37);
     color: #ebebeb;
-    // height: 100vh;
     padding: 20px;
 }
+
 .form-title {
     display: flex;
     justify-content: center;
@@ -11,8 +11,8 @@
     h4 {
         font-size: 30px;
     }
-
 }
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -30,17 +30,15 @@
         color: white;
         border: solid 1px white;
         font-size: 18px;
-        
     }
 
 }
 
-// .form-group2 {
-//     display: flex;
-//     justify-content: center;
-// }
-
-.btn {
+.return-button {
+    display: flex;
+    justify-content: center;
+}
+.btn1, .btn2 {
     margin: auto;
     width: 200px;
     height: 50px;
@@ -53,8 +51,17 @@
 
 }
 
-.btn:hover {
+.btn1:hover {
     border: solid 1px #cf0404;
+}
+
+.btn2:hover {
+    background-color: (rgba(207, 207, 207, 0.342));
+
+}
+
+.validator {
+    color:rgba(226, 226, 226, 0.507)
 }
 
 @media only screen and (max-width: 768px) {

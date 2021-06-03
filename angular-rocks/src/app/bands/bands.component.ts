@@ -20,6 +20,7 @@ export class BandsComponent implements OnInit {
 
   ngOnInit(): void {
     this.viewBandsList();
+    console.log(this.clickedOnBand)
   }
 
   chooseBand(value): void {
@@ -28,6 +29,11 @@ export class BandsComponent implements OnInit {
   }
 
   hideDetail(value: boolean): void {
+    this.clickedOnBand = value;
+  }
+
+  hideForm(value): void {
+    console.log('ne')
     this.clickedOnBand = value;
   }
 
@@ -51,7 +57,4 @@ export class BandsComponent implements OnInit {
       this.bands = bandsList;
     })
   }
-
-
-
 }

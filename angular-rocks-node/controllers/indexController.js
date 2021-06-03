@@ -1,5 +1,4 @@
 const db = require('../config/connectionDB');
-const util = require('util');
 
 class IndexController {
     
@@ -12,9 +11,7 @@ class IndexController {
     }
 
     viewBand(req,res){
-    
         let bandid = req.params.band_id;
-        console.log(bandid)
         let sql = `SELECT * FROM band WHERE band_id=${bandid}`;
         db.query(sql, (err, result)=>{
             console.log('pasa')

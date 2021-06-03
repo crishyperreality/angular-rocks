@@ -39,7 +39,4 @@ export class BandsService {
       'http://localhost:3000/editBand', band
     )
   };
-
- 
-
 }

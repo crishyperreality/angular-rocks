@@ -7,15 +7,13 @@
             <iframe [src]="bandDetailed.video | safe" width="800" height="400" allowfullscreen>
             </iframe>
 
-
             <div class="button-group">
-                <button class="btn" (click)="editBand()">Editar banda</button>
-                <button class="btn2" (click)="deleteBand(bandDetailed)">Eliminar banda</button>
+                <button class="btn btn1" (click)="editBand()">Editar banda</button>
+                <button class="btn btn2" (click)="deleteBand(bandDetailed)">Eliminar banda</button>
             </div>
             <div class="button-group">
-                <button class="btn3" (click)="return()">Volver</button>
+                <button class="btn btn3" (click)="return()">Volver</button>
             </div>
-
         </div>
     </div>
 </div>

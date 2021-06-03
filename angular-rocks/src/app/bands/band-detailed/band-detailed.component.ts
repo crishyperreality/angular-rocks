@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Band, Bands } from 'src/app/model/band';
 import { BandsService } from '../bands.service';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-band-detailed',
@@ -11,13 +10,12 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class BandDetailedComponent implements OnInit {
 
   @Input() bandDetailed: Band;
-  remainingBands: Bands;
   @Output() goToMainPage = new EventEmitter<boolean>();
   @Output() editting = new EventEmitter<boolean>();
   @Output() defineFormTitle = new EventEmitter<string>();
-  safeUrl: SafeUrl;
+  remainingBands: Bands;
 
-  constructor(private bandsService: BandsService, private sanitizer: DomSanitizer) { }
+  constructor(private bandsService: BandsService) { }
 
   ngOnInit(): void {
     console.log(this.bandDetailed)
@@ -32,7 +30,6 @@ export class BandDetailedComponent implements OnInit {
       let changeBand = Object.assign(band, {
         visible: 0,
       });
-
       this.bandsService.deleteBand(changeBand)
       .subscribe((x)=>{
         alert('Has eliminado la banda de la lista')

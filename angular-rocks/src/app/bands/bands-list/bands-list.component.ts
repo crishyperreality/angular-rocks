@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Band, Bands } from 'src/app/model/band';
-import { ReactiveFormsModule, FormsModule, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -11,16 +11,14 @@ import { debounceTime } from 'rxjs/operators';
 export class BandsListComponent implements OnInit {
 
   @Input() bands: Bands; 
+  @Input() filterValue: string;
   @Output() selectedBand = new EventEmitter<Band>();
   @Output() editting = new EventEmitter<boolean>()
   @Output() searching = new EventEmitter<string>();
   @Output() defineFormTitle = new EventEmitter<string>();
   search = new FormControl('');
-  @Input() filterValue: string;
 
-  constructor() { 
-    
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.search.valueChanges
@@ -40,5 +38,4 @@ export class BandsListComponent implements OnInit {
     this.editting.emit(true);
     this.defineFormTitle.emit('Añadir banda')
   }
-
 }

@@ -1,6 +1,12 @@
-<div class="container">
+<div class="container-fluid form">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 form-title m-3">
+            <h4>{{formTitle}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
             <form enctype="multipart/form-data" [formGroup]="bandForm" (ngSubmit)="saveBand()">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre de la banda</label>
@@ -8,20 +14,21 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Información sobre la banda</label>
-                    <textarea id="info" rows="15" formControlName="info" placeholder="{{bandToEdit?.info}}"></textarea>
+                    <textarea id="info" rows="13" formControlName="info" placeholder="{{bandToEdit?.info}}"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Vídeo</label>
+                    <label for="exampleFormControlInput1">URL Vídeo</label>
                     <input type="url" class="form-control" id="video" formControlName="video" placeholder="{{bandToEdit?.video}}">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Imagen</label>
+                    <label for="exampleFormControlFile1">URL Imagen</label>
                     <input type="url" class="form-control" id="image" formControlName="image" placeholder="{{bandToEdit?.image}}">
                 </div>
                 <div class="form-group">
-                    <button type="submit">Guardar</button>
+                    <button class="btn" type="submit">Guardar</button>
                 </div>
             </form>
         </div>
+        <div class="col-3"></div>
     </div>
 </div>

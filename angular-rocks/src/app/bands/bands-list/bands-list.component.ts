@@ -14,6 +14,7 @@ export class BandsListComponent implements OnInit {
   @Output() selectedBand = new EventEmitter<Band>();
   @Output() editting = new EventEmitter<boolean>()
   @Output() searching = new EventEmitter<string>();
+  @Output() defineFormTitle = new EventEmitter<string>();
   search = new FormControl('');
   @Input() filterValue: string;
 
@@ -36,7 +37,8 @@ export class BandsListComponent implements OnInit {
   }
 
   showForm(): void {
-    this.editting.emit(true)
+    this.editting.emit(true);
+    this.defineFormTitle.emit('Añadir banda')
   }
 
 }

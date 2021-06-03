@@ -14,6 +14,7 @@ export class BandDetailedComponent implements OnInit {
   remainingBands: Bands;
   @Output() goToMainPage = new EventEmitter<boolean>();
   @Output() editting = new EventEmitter<boolean>();
+  @Output() defineFormTitle = new EventEmitter<string>();
   safeUrl: SafeUrl;
 
   constructor(private bandsService: BandsService, private sanitizer: DomSanitizer) { }
@@ -43,6 +44,7 @@ export class BandDetailedComponent implements OnInit {
 
   editBand(): void {
     this.editting.emit(true);
+    this.defineFormTitle.emit('Editar banda')
   }
 
 }

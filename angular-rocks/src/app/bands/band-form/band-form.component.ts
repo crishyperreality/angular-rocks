@@ -14,6 +14,7 @@ export class BandFormComponent implements OnInit {
   bandForm: FormGroup;
   selectedImage: File;
   @Input() bandToEdit: Band;
+  @Input() formTitle: string;
   @Output() edittingForm = new EventEmitter<boolean>();
 
   constructor(fb: FormBuilder, private bandsService: BandsService) {
@@ -47,7 +48,10 @@ export class BandFormComponent implements OnInit {
           this.bandsService.addBand(this.bandForm.value)
           .subscribe((x)=>{
             alert('¡Has guardado la banda correctamente!')
+            this.edittingForm.emit(false);
+            window.location.reload();
           })
+          
         }
       }
     }  

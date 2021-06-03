@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Band, Bands } from '../model/band';
 import { BandsService } from './bands.service';
 
@@ -14,6 +14,7 @@ export class BandsComponent implements OnInit {
   clickedOnBand: boolean = false;
   editting: boolean = false;
   filterValue: string;
+  sendFormTitle: string;
 
   constructor(private bandsService: BandsService) { }
 
@@ -37,6 +38,11 @@ export class BandsComponent implements OnInit {
 
   handleSearch(value): void {
     this.filterValue = value;
+  }
+
+  recieveFormTitle(content):void{
+    this.sendFormTitle = content;
+    console.log(content)
   }
 
   private viewBandsList(): void {

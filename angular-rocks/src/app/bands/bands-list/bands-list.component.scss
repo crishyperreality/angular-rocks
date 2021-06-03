@@ -2,12 +2,35 @@
     background-color: #141313;
 }
 
+.header {
+    height: 25vh;
+    background-color: rgb(209, 0, 42);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h2{
+        font-family: 'Concert One';
+        font-size: 70px;
+        letter-spacing: 5px; 
+    }
+
+    h6 {
+        font-size: 28px;
+        font-family: 'Open Sans Condensed';
+        color: #242424;
+    }
+}
+
 .list {
     margin-left: 50px;
 }
 
 .card {
     background-color: transparent;
+    border: solid 1px rgba($color: #d8d8d8, $alpha: 0.3);
+    padding-top: 30px;
 
 
     h5 {
@@ -30,13 +53,18 @@
 
 }
 
+.card:hover {
+    background-color:rgba($color: #424242, $alpha: 0.2);
+    animation: wiggle 4s linear infinite;
+}
+
 
 
 .add-button {
     display: flex;
     justify-content: flex-end;
-    margin: 30px 0 20px 0;
-    font-size: 20px;
+    margin: 30px 0px 20px 0;
+    font-size: 25px;
 }
 
 .btn {
@@ -48,6 +76,11 @@
     text-transform: uppercase;
     font-family: 'Open Sans Condensed';
     font-size: 25px;
+}
+
+.btn:hover {
+    background-color: #646464;
+    border: solid 1px rgb(251, 195, 9);
 }
 
 .search-bar {
@@ -62,4 +95,36 @@
     text-transform: uppercase;
     color: white;
     font-family: 'Pompiere';
+}
+
+
+@keyframes wiggle {
+    0%{
+      transform: rotateZ(0);
+    }
+    20% {
+        transform: rotateZ(-5deg)
+    }
+    40% {
+        transform: rotateZ(4deg)
+    }
+
+    50% {
+      transform: rotateZ(-3deg);
+    }
+    70% {
+        transform: rotateZ(2deg);
+    }
+    90% {
+        transform: rotateZ(-1deg);
+    }
+    100% {
+      transform: rotateZ(0);
+    }
+  }
+
+  @keyframes jumping {
+    0% { bottom: 0px; }
+    50% { bottom: 20px; }
+    100% { bottom: 0px; }
 }

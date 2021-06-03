@@ -3,11 +3,66 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: crimson;
+    justify-content: center;
+    background-color: rgb(116, 19, 19);
 
     p{
         margin: 20px;
+        padding: 20px 70px 5px 70px;
+        color: #d6d5d5;
+        font-family: 'Oswald';
+        font-size: 20px;
+        text-align: center;
     }
+    h2 {
+    font-family: 'Anton';
+    font-size: 50px;
+    letter-spacing: 5px;
+    color: #8d8484;
+    }   
+
+}
+
+.button-group {
+    display: flex;
+}
+
+.btn, 
+.btn2 {
+    width: 200px;
+    height: 50px;
+    background-color: #424242;
+    color: white;
+    border: solid 1px white;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed';
+    font-size: 25px;
+    margin: 20px;
+}
+
+.btn:hover {
+    border: solid 1px #666baf;
+    background-color: #464646;
+}
+
+.btn2:hover {
+    border: solid 1px #e47347;
+    background-color: #464646;
+}
+
+.btn3 {
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    border: solid 1px white;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed';
+    font-size: 25px;
+}
+
+.btn3:hover {
+    background-color: (rgba(241, 153, 153, 0.212));
 
 }
 

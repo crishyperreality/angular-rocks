@@ -1,5 +1,4 @@
 .display {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,5 +63,30 @@
 .btn3:hover {
     background-color: (rgba(241, 153, 153, 0.212));
 
+}
+
+@media only screen and (max-width: 768px){
+    .display {
+        padding-bottom: 50px;
+        h2 {
+            margin-top: 50px;
+            text-align: center
+        }
+        p {
+            padding: 10px;
+        }
+    }
+    .button-group {
+        flex-direction: column;
+        margin-top: 20px;
+        
+        .btn, .btn2 {
+            margin: 15px;
+        }
+    }
+    iframe {
+        width: 80%;
+        height: 80%;
+    }
 }
 

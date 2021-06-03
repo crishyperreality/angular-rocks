@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row list">
-        <div *ngFor="let band of bands | search:filterValue" class="col-5 card m-5" (click)="selectBand(band)">
+        <div *ngFor="let band of bands | search:filterValue" class="col-lg-5 col-10 card m-lg-3 mb-3" (click)="selectBand(band)">
             <img class="card-img-top" src="{{band.image}}" alt="{{band.name}}">
             <div class="card-body">
                 <h5 class="card-title">{{band.name}}</h5>

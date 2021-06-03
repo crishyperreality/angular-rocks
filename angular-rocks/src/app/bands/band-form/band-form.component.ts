@@ -28,12 +28,12 @@ export class BandFormComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.bandToEdit);
-    console.log(this.bandForm.controls);
 
   }
 
   saveBand(): void {
     this.verifyInputs();
+    this.embedVideo();
       if(this.bandForm.valid){
         if(this.bandToEdit){
           let changedBand = Object.assign(this.bandForm.value,{
@@ -71,4 +71,10 @@ export class BandFormComponent implements OnInit {
     }
   }
 
+  private embedVideo(): void {
+    if(this.bandForm.get('video').value.includes('youtube')){
+      let embed = this.bandForm.get('video').value.replace('watch?v=', 'embed/')
+      this.bandForm.controls['video'].setValue(embed);
+  }
+}
 }
